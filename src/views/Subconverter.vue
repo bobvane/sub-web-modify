@@ -877,43 +877,43 @@ export default {
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
-        rename: "",
-        devid: "",
-        interval: "",
+        rename: ""，
+        devid: ""，
+        interval: ""，
         emoji: true,
-        nodeList: false,
+        nodeList: false，
         extraset: false,
-        tls13: false,
-        udp: false,
+        tls13: false，
+        udp: false，
         xudp: false,
-        tfo: false,
+        tfo: false，
         sort: false,
         expand: true,
-        scv: false,
-        fdn: false,
+        scv: false，
+        fdn: false，
         appendType: false,
-        insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
+        insert: false， // 是否插入默认订阅的节点，对应配置项 insert_url
         new_name: true, // 是否使用 Clash 新字段
         tpl: {
           surge: {
             doh: false // dns 查询是否使用 DoH
-          },
+          }，
           clash: {
             doh: false
-          },
+          }，
           singbox: {
             ipv6: false
           }
         }
-      },
+      }，
       loading1: false,
-      loading2: false,
-      loading3: false,
+      loading2: false，
+      loading3: false，
       customSubUrl: "",
       customShortSubUrl: "",
-      dialogUploadConfigVisible: false,
+      dialogUploadConfigVisible: false，
       loadConfig: "",
-      dialogLoadConfigVisible: false,
+      dialogLoadConfigVisible: false，
       uploadFilter: "",
       uploadScript: "",
       uploadConfig: "",
@@ -924,7 +924,7 @@ export default {
     };
   },
   created() {
-    document.title = "在线订阅转换工具";
+    document.title = "BobVane自用在线订阅转换工具";
     this.isPC = this.$getOS().isPc;
   },
   mounted() {
@@ -943,7 +943,7 @@ export default {
       lightMedia.addEventListener('change', callback);
       darkMedia.addEventListener('change', callback);
     } //监听系统主题，自动切换！
-  },
+  }，
   methods: {
     selectChanged() {
       this.getBackendVersion();
@@ -1331,69 +1331,70 @@ export default {
       data.append("xudp", encodeURIComponent(this.form.xudp.toString()));
       data.append("emoji", encodeURIComponent(this.form.emoji.toString()));
       data.append("list", encodeURIComponent(this.form.nodeList.toString()));
-      data.append("udp", encodeURIComponent(this.form.udp.toString()));
-      data.append("tfo", encodeURIComponent(this.form.tfo.toString()));
-      data.append("expand", encodeURIComponent(this.form.expand.toString()));
-      data.append("scv", encodeURIComponent(this.form.scv.toString()));
-      data.append("fdn", encodeURIComponent(this.form.fdn.toString()));
-      data.append("sdoh", encodeURIComponent(this.form.tpl.surge.doh.toString()));
-      data.append("cdoh", encodeURIComponent(this.form.tpl.clash.doh.toString()));
-      data.append("newname", encodeURIComponent(this.form.new_name.toString()));
+      data.append("udp"， encodeURIComponent(this.form.udp.toString()));
+      data.append("tfo"， encodeURIComponent(this。form.tfo。toString()));
+      data.append("expand"， encodeURIComponent(this.form.expand.toString()));
+      data.append("scv"， encodeURIComponent(this.form.scv.toString()));
+      data.append("fdn"， encodeURIComponent(this。form.fdn。toString()));
+      data.append("sdoh"， encodeURIComponent(this.form.tpl.surge.doh.toString()));
+      data.append("cdoh"， encodeURIComponent(this。form.tpl。clash。doh.toString()));
+      data.append("newname"， encodeURIComponent(this。form.new_name。toString()));
       return data;
-    },
+    }，
     confirmUploadScript() {
       if (this.form.sourceSubUrl.trim() === "") {
-        this.$message.error("订阅链接不能为空");
+        this。$message。error("订阅链接不能为空");
         return false;
       }
-      this.loading2 = true;
+      this。loading2 = true;
       let data = this.renderPost();
-      data.append("sortscript", encodeURIComponent(this.uploadScript));
-      data.append("filterscript", encodeURIComponent(this.uploadFilter));
-      this.$axios
-          .post(configScriptBackend, data, {
+      data.append("sortscript"， encodeURIComponent(this.uploadScript));
+      data.append("filterscript"， encodeURIComponent(this.uploadFilter));
+      this。$axios
+          。post(configScriptBackend, data, {
             header: {
               "Content-Type": "application/form-data; charset=utf-8"
             }
           })
-          .then(res => {
+          。then(res => {
             if (res.data.code === 0 && res.data.data !== "") {
-              this.$message.success(
+              this。$message.success(
                   "自定义JS上传成功，订阅链接已复制到剪贴板（IOS设备和Safari浏览器不支持自动复制API，需手动点击复制按钮）"
               );
               this.customSubUrl = res.data.data;
-              this.$copyText(res.data.data);
-              this.dialogUploadConfigVisible = false;
-              this.btnBoolean = true;
+              this。$copyText(res.data.data);
+              this。dialogUploadConfigVisible = false;
+              this。btnBoolean = true;
             } else {
-              this.$message.error("自定义JS上传失败: " + res.data.msg);
+              this。$message.error("自定义JS上传失败: " + res.data.msg);
             }
           })
-          .catch(() => {
-            this.$message.error("自定义JS上传失败");
+          。catch(() => {
+            this。$message.error("自定义JS上传失败");
           })
-          .finally(() => {
-            this.loading2 = false;
+          。finally(() => {
+            this。loading2 = false;
           })
-    },
+    }，
     getBackendVersion() {
-      this.$axios
-          .get(
-              this.form.customBackend + "/version"
+      this。$axios
+          。get(
+              this。form。customBackend + "/version"
           )
-          .then(res => {
-            this.backendVersion = res.data.replace(/backend\n$/gm, "");
-            this.backendVersion = this.backendVersion.replace("subconverter", "SubConverter");
+          。键，然后(res => {
+            this。backendVersion = res.data.replace(/backend\n$/gm, "");
+            this。backendVersion = this。backendVersion.替换("subconverter"， "SubConverter");
             let a = this.form.customBackend.indexOf("url.v1.mk") !== -1 || this.form.customBackend.indexOf("sub.d1.mk") !== -1;
-            let b = this.form.customBackend.indexOf("127.0.0.1") !== -1;
-            a ? this.$message.success(`${this.backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless reality+hysteria+hysteria2订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/hysteria订阅转换");
+            let b = this。form。customBackend.indexOf("127.0.0.1") !== -1;
+            a ? this。$message。success(`${this。backendVersion}` + "肥羊负载均衡增强版后端，已屏蔽免费节点池（会返回403），额外支持vless reality+hysteria+hysteria2订阅转换") : b ? this.$message.success(`${this.backendVersion}` + "本地局域网自建版后端") : this.$message.success(`${this.backendVersion}` + "官方原版后端不支持vless/hysteria订阅转换");
           })
-          .catch(() => {
-            this.$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
+          。catch(() => {
+            this。$message.error("请求SubConverter版本号返回数据失败，该后端不可用！");
           });
     }
   }
 };
 </script>
+
 
 
