@@ -498,8 +498,8 @@ export default {
             label: "通用",
             options: [
               {
-                label: "默认",
-                value: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini"
+                label: "默认（Bob-crypto）",
+                value: "https://raw.githubusercontent.com/bobvane/BTC/refs/heads/main/Clash-bob.ini"
               },
               {
                 label: "默认（Bob-mini）",
@@ -877,7 +877,7 @@ export default {
         clientType: "",
         customBackend: this.getUrlParam() == "" ? "https://subapi.bobvane.top" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini",
+        remoteConfig: "https://raw.githubusercontent.com/bobvane/BTC/refs/heads/main/Clash-bob.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -1399,6 +1399,7 @@ export default {
   }
 };
 </script>
+
 
 
 
