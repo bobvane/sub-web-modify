@@ -510,7 +510,7 @@ export default {
                 value: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini"
               }
             ]
-          }，
+          },
           {
             label: "ACL规则",
             options: [
@@ -1395,6 +1395,7 @@ export default {
   }
 };
 </script>
+
 
 
 
