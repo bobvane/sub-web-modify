@@ -499,7 +499,7 @@ export default {
             options: [
               {
                 label: "默认（Bob-crypto）",
-                value: "https://raw.githubusercontent.com/bobvane/BTC/refs/heads/main/Clash-bob.ini"
+                value: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini"
               },
               {
                 label: "默认（Bob-mini）",
@@ -877,7 +877,7 @@ export default {
         clientType: "",
         customBackend: this.getUrlParam() == "" ? "https://subapi.bobvane.top" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.githubusercontent.com/bobvane/BTC/refs/heads/main/Clash-bob.ini",
+        remoteConfig: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -928,7 +928,7 @@ export default {
     };
   },
   created() {
-    document.title = "在线订阅转换工具";
+    document.title = "BobVane自建在线订阅转换工具";
     this.isPC = this.$getOS().isPc;
   },
   mounted() {
@@ -1399,6 +1399,7 @@ export default {
   }
 };
 </script>
+
 
 
 
