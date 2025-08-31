@@ -12,7 +12,7 @@
             <svg-icon class="youguan" icon-class="youtube" style="float:right;margin-left:10px" @click="gotoYouTuBe"/>
             <svg-icon class="channel" icon-class="telegram" style="float:right;margin-left: 10px"
                       @click="gotoTgChannel"/>
-            <div style="text-align:center;font-size:15px">订 阅 转 换</div>
+            <div style="text-align:center;font-size:15px">BobVane 订 阅 转 换</div>
           </div>
           <el-container>
             <el-form :model="form" label-width="80px" label-position="left" style="width: 100%">
@@ -474,6 +474,7 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
+          "BobVane自建后端": "https://subapi.bobvane.top",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
@@ -483,6 +484,7 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
+          {value: "https://subapi.bobvane.top"},
           {value: "https://url.v1.mk"},
           {value: "https://sub.d1.mk"},
           {value: "https://api.tsutsu.one"},
@@ -497,35 +499,19 @@ export default {
             options: [
               {
                 label: "默认",
-                value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
+                value: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini"
               },
               {
-                label: "默认（自动测速）",
-                value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
+                label: "默认（Bob-mini）",
+                value: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini"
               },
               {
-                label: "默认（索尼电视专用）",
-                value: "https://raw.githubusercontent.com/youshandefeiyang/webcdn/main/SONY.ini"
+                label: "默认（Bob-All带虚拟币）",
+                value: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Cash-All.ini"
               },
               {
-                label: "默认（附带用于 Clash 的 AdGuard DNS）",
-                value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/default_with_clash_adg.yml"
-              },
-              {
-                label: "ACL_全分组 Dream修改版",
-                value: "https://raw.githubusercontent.com/WC-Dream/ACL4SSR/WD/Clash/config/ACL4SSR_Online_Full_Dream.ini"
-              },
-              {
-                label: "ACL_精简分组 Dream修改版",
-                value: "https://raw.githubusercontent.com/WC-Dream/ACL4SSR/WD/Clash/config/ACL4SSR_Mini_Dream.ini"
-              },
-              {
-                label: "emby-TikTok-流媒体分组-去广告加强版",
-                value: "https://raw.githubusercontent.com/justdoiting/ClashRule/main/GeneralClashRule.ini"
-              },
-              {
-                label: "流媒体通用分组",
-                value: "https://raw.githubusercontent.com/cutethotw/ClashRule/main/GeneralClashRule.ini"
+                label: "默认（Bob-Full）",
+                value: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-Full.ini"
               }
             ]
           },
@@ -1413,3 +1399,4 @@ export default {
   }
 };
 </script>
+
