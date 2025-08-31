@@ -875,9 +875,9 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://url.v1.mk" : this.getUrlParam(),
+        customBackend: this.getUrlParam() == "" ? "https://subapi.bobvane.top" : this.getUrlParam(),
         shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini",
+        remoteConfig: "https://raw.githubusercontent.com/bobvane/clash/refs/heads/main/Clash-mini.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -1399,6 +1399,7 @@ export default {
   }
 };
 </script>
+
 
 
 
